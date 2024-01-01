@@ -24,9 +24,14 @@ function Register() {
         theme: "dark",
     }
 
+    useEffect(() => {
+        if(localStorage.getItem('chat-app-user')){
+            navigate('/')
+        }
+    }, [])
+
     const handleSubmit = async (event) => {
         try{
-            console.log('in submit', registerRoute)
             event.preventDefault();
             if(handleValidation()){
                 const {password, username, email} = values;
@@ -35,7 +40,6 @@ function Register() {
                     email,
                     password,
                 })
-                console.log(data);
                 if(data.status === false){
                     toast.error(data.msg, toastOptions);
                 }
@@ -44,7 +48,6 @@ function Register() {
                     localStorage.setItem('chat-app-user', JSON.stringify(data.user));
                     navigate('/');
                 }
-                console.log(localStorage)
             }
         }catch(err){
             console.log(err)
@@ -87,7 +90,7 @@ function Register() {
                 <input type='email' placeholder='Email' name='email' onChange={(e) => handleChange(e)} />
                 <input type='password' placeholder='Password' name='password' onChange={(e) => handleChange(e)} />
                 <input type='password' placeholder='Confirm Password' name='confirmPassword' onChange={(e) => handleChange(e)} />
-                <button type='submit'>Create User</button>
+                <button type='submit'>Register</button>
                 <span>Already have an account ?<Link to='/login'> Login </Link></span>
             </form>
         </FormContainer>
@@ -134,6 +137,7 @@ const FormContainer = styled.div`
             width: 100%;
             font-size: 1rem;    
             &:focus {
+                padding: 1rem;
                 border:0.1rem solid #997af0;
                 outline: none;
             }
