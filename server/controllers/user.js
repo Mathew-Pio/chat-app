@@ -75,15 +75,18 @@ export const setAvatar = async(req, res) => {
 
 export const allUsers = async (req, res) => {
     try{
-        const users = await User.find({_id: { $ne: req.params.id }}).select([
+        const users = await User.find({
+            _id: { $ne: req.params.id }
+        }).select([
             'email',
             'username',
             'avatarImage',
             '_id'
         ])
-        return res.status(200).json(users)
+        // const users = await User.find();
+        return res.status(200).json({users})
     }catch(err){
-        console.log(err)
+        return res.json(err)
     }
 }
 
