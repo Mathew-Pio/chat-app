@@ -1,32 +1,21 @@
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
-    username: {
-        type:String,
-        required: true,
-        min: 3,
-        max: 20,
-        unique: true,
+const messageSchema = new mongoose.Schema({
+    message : {
+        text : {
+            type: String,
+            required: true,
+        },
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        max: 50
-    },
-    password: {
-        type: String,
-        required: true,
-        min: 8
-    },
-    isAvatarImageSet: {
-        type: Boolean,
-        default: false
-    },
-    avatarImage: {
-        type: String,
-        default: "",
-    },
-})
+        users: Array,
+        sender: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true,
+        },
+},
+{
+    timestamps: true,
+});
 
-export default mongoose.model('User', userSchema)
+export default mongoose.model('Message', messageSchema)
