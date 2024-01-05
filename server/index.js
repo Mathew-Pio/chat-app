@@ -38,7 +38,7 @@ const __dirname = path.resolve();
 
 const io = new Server(server, {
     cors: {
-        origin: "https://chat-app-jet-mu.vercel.app/",
+        origin: "https://chat-app-5nrj.onrender.com",
         credentials: true,
     }
 })
