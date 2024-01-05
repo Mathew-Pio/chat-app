@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/index.js",
-    "build": "npm install --server && npm install --prefix public && npm start --prefix public"
+    "build": "npm install && npm install --prefix public && npm start --prefix public"
   },
   "keywords": [],
   "author": "",
