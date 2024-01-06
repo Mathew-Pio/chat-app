@@ -116,6 +116,16 @@ const Container = styled.div`
     grid-template-rows: 10% 78% 12%;
     gap: 0.1rem;
     overflow: hidden;
+    @media screen and (min-width: 720px) and (max-width: 1080px) {
+        padding: 0 1rem;
+        gap: 1rem;
+      }
+      @media screen and (min-width: 100px) and (max-width: 500px) {
+        overflow-x: visible;
+        overflow-y: visible;
+        padding: 0 1rem;
+        gap: 1rem;
+      }
     .chat-header {
         display: flex;
         justify-content: space-between;
