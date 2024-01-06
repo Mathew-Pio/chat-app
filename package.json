@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "start-client": "cd ../public && npm install && npm start",
+    "start-client": "react-scripts build && npm start",
     "start-all": "npm run start & npm run start-client",
     "build": "npm install && npm start"
   },
