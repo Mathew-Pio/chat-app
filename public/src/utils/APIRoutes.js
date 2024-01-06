@@ -1,4 +1,4 @@
-export const host = 'https://chat-app-six-flame.vercel.app/';
+export const host = 'https://chat-app-six-flame.vercel.app';
 
 export const registerRoute = `${host}/api/auth/`
 
