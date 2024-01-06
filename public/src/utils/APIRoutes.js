@@ -1,4 +1,4 @@
-export const host = 'https://chat-app-six-flame.vercel.app';
+export const host = 'https://chat-app-5nrj.onrender.com';
 
 export const registerRoute = `${host}/api/auth/`
 
