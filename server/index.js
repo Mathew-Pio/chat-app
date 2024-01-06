@@ -11,7 +11,13 @@ const port = process.env.PORT;
 const mongourl = process.env.MONGODB_URL
 const app = express();
 
-app.use(cors({ origin: '*' }));
+const corsOptions = {
+    origin: true,
+    credentials: true
+}
+
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api/auth', userRoutes);
 app.use('/api/messages', messageRoutes)
