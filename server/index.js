@@ -36,7 +36,7 @@ const server = app.listen(port, () => {
 
 const io = new Server(server, {
     cors: {
-        origin: "https://chat-app-5nrj.onrender.com",
+        origin: "https://chat-app-client-brown.vercel.app",
         credentials: true,
     }
 })
