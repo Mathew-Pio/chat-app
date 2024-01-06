@@ -5,7 +5,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "nodemon index.js",
+    "start-client": "cd ../public && npm install && npm start",
+    "start-all": "npm run start & npm run start-client",
     "build": "npm install && npm start"
   },
   "keywords": [],
