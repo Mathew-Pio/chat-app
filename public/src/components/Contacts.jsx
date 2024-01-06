@@ -72,7 +72,16 @@ const Container = styled.div`
     display: grid;
     grid-template-rows: 10% 75% 15%;
     background-color: #080420;
-    overflow: hidden;
+    @media screen and (min-width: 720px) and (max-width: 1080px) {
+      padding: 0 1rem;
+      gap: 1rem;
+    }
+    @media screen and (min-width: 100px) and (max-width: 500px) {
+      overflow-x: visible;
+      overflow-y: visible;
+      padding: 0 1rem;
+      gap: 1rem;
+    }
     .brand {
         display: flex;
         align-items: center;
