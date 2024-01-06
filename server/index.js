@@ -5,7 +5,6 @@ import mongoose from "mongoose";
 import userRoutes from './routes/user.js'
 import messageRoutes from './routes/message.js'
 import {Server} from 'socket.io';
-import path from 'path';
 
 dotenv.config();
 const port = process.env.PORT;
@@ -33,7 +32,6 @@ const server = app.listen(port, () => {
     console.log(`app is listening on port ${port}`)
 })
 
-const __dirname = path.resolve();
 
 
 const io = new Server(server, {
@@ -45,13 +43,6 @@ const io = new Server(server, {
 
 global.onlineUsers = new Map();
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Handle client-side routing for any other request
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 io.on('connection', (socket) => {
     global.chatSocket = socket;
