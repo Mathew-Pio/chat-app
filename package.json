@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "start-client": "react-scripts build && npm start",
+    "start": "nodemon index.js && cd public npm start",
+    "start-client": "npm start",
     "start-all": "npm run start & npm run start-client",
     "build": "npm install && npm start"
   },
