@@ -55,6 +55,12 @@ padding-bottom: 0.3rem;
     padding: 0 1rem;
     gap: 1rem;
   }
+  @media screen and (min-width: 100px) and (max-width: 500px) {
+    overflow-x: visible;
+    overflow-y: visible;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
 .button-container {
     display: flex;
     align-items: center;
